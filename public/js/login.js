@@ -1,0 +1,1 @@
+var Login=function(){function n(){window.location.replace("/admin/")}function r(n){Common.error("Error!",n.responseJSON.msg)}return{init:function(){var o;$("[app-name]").text("Iniciar Sesión"),o={url:"login",success:n,error:r,rules:{username:{required:!0},password:{required:!0}}},Common.validator($("#loginForm"),o)}}}();$(document).ready((function(){Login.init()}));

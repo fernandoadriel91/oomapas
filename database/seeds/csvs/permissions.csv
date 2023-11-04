@@ -1,0 +1,8 @@
+route,title,icon,menu,priority,parent
+user,Usuarios,,1,1,3
+permission,Permisos,,1,1,4
+,Usuarios y Dependencias,flaticon-users,1,5,-1
+,Developers,la la-code,1,7,-1
+role,Roles,,1,2,4
+,Admin,,0,4,-1
+developer,Developer,,0,6,-11

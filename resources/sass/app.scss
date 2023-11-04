@@ -1,0 +1,182 @@
+// Variables
+@import 'variables';
+@import './theme_src/sass/framework/config';
+
+[content-view] {
+    -webkit-animation-duration: 0.3s;
+    -moz-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+
+.m-menu__item.m-menu__item--active a {
+	pointer-events: none;
+}
+
+body.hide {
+    display: none;
+}
+
+table.table-bordered.dataTable th {
+    font-weight: 600;
+    font-size: 15px;
+    padding-right: 35px;
+    background-color: rgb(244, 243, 248);
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #f4f5f8;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfdfd;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f7f8fa;
+}
+
+table.table-bordered.dataTable,
+table.table-bordered.dataTable tbody td {
+    border: 0;
+}
+
+table.table-bordered.dataTable tbody td {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.m-error-6 .m-error_container .m-error_subtitle>h1 {
+    font-size: 7rem;
+    margin-top: 1rem;
+}
+
+.m-error-6 .m-error_container {
+    text-align: justify;
+}
+
+.m-error-6 .m-error_container a button {
+    font-size: 2em;
+    padding: 0.8em;
+    margin-top: 2em;
+}
+
+.m-brand__logo-wrapper img{
+    max-height: 43px;
+    width: auto;
+}
+
+@media (min-width: 1200px) {
+    .modal-xl {
+        max-width: 1200px;
+    }
+}
+
+.r-pill {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.r-pill legend {
+	display: block;
+	font-size: inherit;
+	font-weight: bold;
+	margin-bottom: .5em;
+	padding: 0;
+	width: 100%;
+}
+
+.r-pill__group {
+	display: inline-block;
+	padding: .25em;
+}
+
+.r-pill__item {
+	display: inline-block;
+	position: relative;
+}
+
+.r-pill input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: 2px solid;
+	height: 100%;
+	left: 0;
+	opacity: .00001;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.r-pill__item label {
+	border-radius: 0.3em;
+	border: 2px solid transparent;
+	color: #333333;
+	display: block;
+	padding: .25em .50em;
+}
+
+
+@each $name, $color in $m--state-colors {
+    .r-pill__item.r-pill--#{$name} input:hover ~ label,
+    .r-pill__item.r-pill--#{$name} label:hover {
+        background: lighten(array-get($color, base), 20%);
+    }
+
+    .r-pill[disabled] .r-pill__item.r-pill--#{$name} input:checked + label:hover,
+    .r-pill__item.r-pill--#{$name} input:checked + label {
+        background: array-get($color, base);
+        color: #fff;
+    }
+}
+
+
+/**
+ * Disabled
+ */
+.r-pill[disabled],
+.r-pill__item input[disabled] + label {
+	opacity: .5;
+}
+
+.r-pill__item input[disabled] ~ label,
+.r-pill__item input[disabled] ~ label:hover,
+.r-pill[disabled] label:hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: not-allowed;
+}
+
+
+/**
+ * Undo styling that makes these pills appear as
+ * if they are all checked in high contrast mode.
+ */
+@media screen and (-ms-high-contrast: active) {
+	.r-pill__item label {
+		border: 0;
+		margin: 2px;
+	}
+
+	.r-pill__item input:checked + label {
+		border: 2px solid;
+		margin: 0;
+	}
+
+	.r-pill__item input:hover ~ label,
+	.r-pill__item label:hover {
+		text-decoration: underline;
+	}
+
+	.r-pill[disabled] .r-pill__item label:hover,
+	.r-pill[disabled] .r-pill__item input:hover ~ label {
+		text-decoration: none
+	}
+}

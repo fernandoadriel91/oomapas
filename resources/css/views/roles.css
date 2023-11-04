@@ -1,0 +1,32 @@
+.access-panel .la {
+    margin-bottom: 8px;
+}
+
+.access-panel .la.display.partial {
+    opacity: 0.6;
+}
+
+.access-panel .la {
+    display: none;
+}
+
+.access-panel .la.display {
+    display: inline-block;
+}
+
+.access-panel .la.display:not(.la-lock) {
+    font-size: 1.4rem;
+}
+
+.access-panel {
+    cursor: pointer;
+}
+
+.access-panel .la.la-lock {
+    font-size: 12px;
+}
+
+.popover {
+    width: 350px;
+    max-width: 350px;
+}
