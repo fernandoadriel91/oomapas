@@ -1,15 +1,15 @@
 <div class="row">
     <div class="col-sm-4">
         @mInput(["type"=>"date", "label" => "Fecha", 
-        "name"=>"date", "value"=>$article->date]) 
+        "name"=>"date", "value"=>$capture->date]) 
     </div>
     <div class="col-sm-4">
         @mSelect2(["label" => "Válvula", 
         "name"=>"valve_id", "placeholder"=>"Seleccionar válvula", "value"=>($capture->valve ? $capture->valve->id : ''), "text"=>($capture->valve ? $capture->valve->name : '')])              
     </div>
     <div class="col-sm-4">
-        @mSelect2(["label" => "Hora de apertura", 
-        "name"=>"organism_id", "placeholder"=>"Oficialia", "value"=>($director->organism ? $director->organism->id : ''), "text"=>($director->organism ? $director->organism->name : '')])                 
+        @mInput(["type"=>"text", "label" => "Hora de Apertura", 
+        "name"=>"opening", "placeholder"=>"", "value"=>$capture->address])                 
     </div>
 </div>
 <div class="row">
